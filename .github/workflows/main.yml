@@ -27,18 +27,14 @@ jobs:
       - name: Build
         run: echo 'Configuration updated ...'
 
-  post:
-    always:
       - name: Clean workspace
         run: |
           echo 'This will always run'
           git clean -ffdx
 
-    # You may need to replace the email notification with a GitHub action or another notification method
-    failure:
+      # You may need to replace the email notification with a GitHub action or another notification method
       - name: Send email on failure
+        if: failure()
         run: |
           echo 'Sending email notification...'
           # You may need to replace this with the appropriate method for sending emails
-
-    # GitHub Actions does not have built-in support for "unstable" or "changed" states
