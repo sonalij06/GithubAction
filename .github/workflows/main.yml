@@ -1,12 +1,6 @@
 name: CI
 
-on:
-  schedule:
-    - cron: "30 15 * * *"
-  push:
-    branches:
-      - master
-
+on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
