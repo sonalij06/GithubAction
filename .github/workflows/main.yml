@@ -13,7 +13,6 @@ jobs:
         run: python3 -m unittest discover -s test
       
       - name: Execute script on master branch
-        if: github.ref == 'refs/heads/master'
         run: |
           chmod +x ./scripts/commit.py
           python3 ./scripts/commit.py
